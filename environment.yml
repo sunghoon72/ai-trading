@@ -1,0 +1,12 @@
+name: ai-trading
+channels:
+  - defaults
+dependencies:
+  - python=3.10
+  - pip
+  - pip:
+    - fastapi
+    - uvicorn
+    - yfinance
+    - pandas
+    # 나중에 여기에 torch, tensorflow 등이 추가될 예정

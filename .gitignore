@@ -1,0 +1,21 @@
+# Next.js (Frontend)
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/build/
+
+# Python (Backend)
+backend/__pycache__/
+backend/*.py[cod]
+backend/venv/
+backend/.venv/
+backend/env/
+
+# OS / Editor
+.DS_Store
+.vscode/
+
+# Environment Variables (비밀키 절대 올리지 마세요!)
+.env
+.env.local
+*.env
