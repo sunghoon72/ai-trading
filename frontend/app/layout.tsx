@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
+import { SessionProvider } from "next-auth/react";
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -25,7 +27,7 @@ export default function RootLayout({children,}: Readonly<{children: React.ReactN
           <p>this is header</p>
       </header>
         <main style={{ padding: "24px" }}>
-          {children}  {/* 여기에 page.tsx 내용이 들어감 */}
+         {children}  {/* 여기에 page.tsx 내용이 들어감 */}
         </main>
       <footer style={{background: "#f5f5f5"}}>
           <p>© 2025 My App. All rights reserved.</p>
