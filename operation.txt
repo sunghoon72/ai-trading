@@ -1,0 +1,11 @@
+
+#fastapi
+uvicorn main:app --reload
+
+#next.js
+npm run dev
+
+같이 키고, 끄는 스크립트 만들기
+
+#concurrent
+npm run dev

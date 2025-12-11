@@ -1,0 +1,29 @@
+{
+  "name": "ai-trading",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently -n \"PYTHON,NEXT.JS\" -c \"yellow,cyan\" \"npm run backend\" \"npm run frontend\"",
+    "backend": "cd backend && conda run --no-capture-output -n ai-trading uvicorn main:app --reload",
+    "frontend": "cd frontend && npm run dev"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sunghoon72/ai-trading.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/sunghoon72/ai-trading/issues"
+  },
+  "homepage": "https://github.com/sunghoon72/ai-trading#readme",
+  "dependencies": {
+    "next-auth": "^4.24.13"
+  }
+}
