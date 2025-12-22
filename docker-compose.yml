@@ -1,0 +1,31 @@
+# docker-compose.yml
+
+version: '3.8'
+
+services:
+  # 1. 백엔드 서비스 정의
+  backend:
+    build:
+      context: ./backend      # backend 폴더를 빌드 경로로 지정
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"           # 로컬:컨테이너
+    volumes:
+      - ./backend:/app        # (개발용) 코드 수정 시 바로 반영되도록 연결
+    environment:
+      - ALLOWED_ORIGINS=http://localhost:3000 # CORS 설정 등에 필요
+
+  # 2. 프론트엔드 서비스 정의
+  frontend:
+    build:
+      context: ./frontend     # frontend 폴더를 빌드 경로로 지정
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules     # 로컬의 node_modules와 꼬이지 않게 방지
+    environment:
+      - NEXT_PUBLIC_API_URL=http://localhost:8000 # 브라우저에서 백엔드 호출 시
+    depends_on:
+      - backend               # 백엔드가 켜진 뒤에 프론트엔드 실행
